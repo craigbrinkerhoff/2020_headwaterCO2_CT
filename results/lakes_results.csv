@@ -1,4 +1,4 @@
-,WBArea_Permanent_Identifier,area_skm,HRT_hrs,throughflow,order,relEvasion,lakeAreaQuants,lakeHRTQuants
+,WBArea_Permanent_Identifier,area_skm,HRT_hrs,throughflow,order,relEvasion,lakeAreaQuants_skm,lakeHRTQuants_hrs
 1,{00032587-2EE7-4A6E-93FB-AD785C552997},0.00059815,19.14721342,1,1,0.311995861,0.001,75.3
 2,{001938B4-A003-4A71-9045-3733BA813E8A},0.067,18769.04635,1,1,1,97,227872.2
 3,{003876B1-EEAD-410E-91D2-9713A15DB8F2},0.003,37.50248425,1,1,0.519271962,0.004,75.3
