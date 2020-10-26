@@ -15,7 +15,7 @@ theme_set(theme_cowplot())
 rm(list = ls())
 
 #Set working directory with results
-setwd('C:\\Users\\craig\\Box Sync\\Ongoing Projects\\Watershed_Rules_of_Life\\results')
+setwd('~\\results')
 
 #function to orient number of lakes by order in plot
 give.n <- function(x){
@@ -43,4 +43,4 @@ lakesPlot_by_order <- ggplot(lakes, aes(y=area, x=factor(order))) +
   ) +
   annotation_logticks(sides = "l") 
 
-ggsave(file="C:\\Users\\craig\\Box Sync\\Ongoing Projects\\Watershed_Rules_of_Life\\manuscript\\Figures\\FigS3.jpg", lakesPlot_by_order, width = 7, height = 7)
+ggsave(file="~\\Figures\\FigS3.jpg", lakesPlot_by_order, width = 7, height = 7)

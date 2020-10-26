@@ -19,18 +19,18 @@ theme_set(theme_cowplot())
 rm(list = ls())
 
 #Set working directory with results
-setwd('C:\\Users\\craig\\Box Sync\\Ongoing Projects\\WROL_slash_CT_co2\\results')
+setwd('~\\results')
 
 #Read in data
 validation <- read.csv('routing_validation_results.csv')
-gasTransfer <- read.table('C:\\Users\\craig\\Box Sync\\Ongoing Projects\\WROL_slash_CT_co2\\working_drive_4_watersheds\\CT\\NHD_gasTransfer_CT.txt', sep='\t')
+gasTransfer <- read.table('~\\inputs\\NHD_rivNetwork.txt', sep='\t')
 
 #filter for channels with routed Q
-routingIDs <- read.table("routingIDs.txt")
+routingIDs <- read.table("~\\inputs\\routingIDs.txt")
 gasTransfer <- filter(gasTransfer, gasTransfer$NHDPlusID %in% routingIDs$NHDPlusID)
 gasTransfer <- gasTransfer[order(gasTransfer$NHDPlusID),]
 gasTransfer <- left_join(gasTransfer, routingIDs, by='NHDPlusID')
-charQ <- readRDS('C:\\Users\\craig\\Box Sync\\Ongoing Projects\\WROL_slash_CT_co2\\CT_characteristic_Q\\flowDuration.rds')
+charQ <- readRDS('~\\inputs\\modeled_flowDuration_curves.rds')
 charQ <- data.frame(matrix(unlist(charQ), nrow=length(charQ), byrow=T))
 charQ$index <- 1:nrow(charQ)
 charQ <- left_join(charQ, routingIDs, by=c('index'='V1'))
@@ -159,4 +159,4 @@ moose <- ggplot(plot_val, aes(x=exd_prob, y=log10(discharge), color=Flow, linety
 plot_fin <- plot_grid(thompsonville, Ashuelot, deerfield, moose, ncol=2, labels=c('auto'))
 plot_fin <- plot_grid(plot_fin, total_validation, nrow=2, labels=c('', 'e'))
 
-ggsave(file="C:\\Users\\craig\\Box Sync\\Ongoing Projects\\Watershed_Rules_of_Life\\manuscript\\Figures\\FigS1.jpg", plot_fin, width = 9, height = 12) #saves g
+ggsave(file="~\\Figures\\FigS1.jpg", plot_fin, width = 9, height = 12) #saves g

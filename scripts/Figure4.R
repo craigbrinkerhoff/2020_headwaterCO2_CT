@@ -15,7 +15,7 @@ theme_set(theme_cowplot())
 rm(list = ls())
 
 #Set working directory with results
-setwd('C:\\Users\\craig\\Box Sync\\Ongoing Projects\\WROL_slash_CT_CO2\\results')
+setwd('~\\results')
 
 #Load in results
 lakes <- read.csv('lakes_results.csv')
@@ -73,4 +73,4 @@ plot2 <- ggplot(sumEvaded_by_order, aes(x=factor(StreamOrde), y=MA_evaded/MA)) +
 #Make figure
 grid <- plot_grid(lakesPlot_hrt, lakesPlot_area, labels="auto", ncol = 2, label_size = 26)
 grid <- plot_grid(grid, plot2, ncol=1, labels = c(NA, 'c'), label_size = 26)
-ggsave('Fig4.jpg', path='C:\\Users\\craig\\Box Sync\\Ongoing Projects\\WROL_slash_CT_CO2\\manuscript\\Figures\\fin\\', width=13, height=12)
+ggsave('Fig4.jpg', path='~Figures\\', width=13, height=12)

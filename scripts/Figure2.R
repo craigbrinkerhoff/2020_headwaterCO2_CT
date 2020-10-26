@@ -17,7 +17,7 @@ rm(list = ls())
 j <- 15 #set to 14 for nhd mean annual and 15 for routed mean annual for Fig 3
 
 #Set working directory with results
-setwd('C:\\Users\\craig\\Box Sync\\Ongoing Projects\\Watershed_Rules_of_Life\\results')
+setwd('~\\results')
 
 #read in results
 plot <- read.csv('field_validation_results.csv')
@@ -79,4 +79,4 @@ legend <- get_legend(valPlot_allflows +
 
 plotVal <- plot_grid(gridPlot, legend, ncol=1, rel_heights = c(1, .1))
 plotVal
-ggsave('Fig2.jpg', path = 'C:\\Users\\craig\\Box Sync\\Ongoing Projects\\Watershed_Rules_of_Life\\manuscript\\Figures\\', width = 13, height=8)
+ggsave('Fig2.jpg', path = '~\\Figures\\', width = 13, height=8)

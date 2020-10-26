@@ -20,7 +20,7 @@ j <- 15 #set to 14 for nhd mean annual and 15 for routed mean annual for Fig 3
 scaleFUN <- function(x) sprintf("%.2f", x)
 
 #Set working directory with results
-setwd('C:\\Users\\craig\\Box Sync\\Ongoing Projects\\WROL_slash_CT_co2\\results')
+setwd('~\\results')
 
 #read in results and wrangle data
 perc_lakes <- read.csv('evasion_network.csv') #-1 is routed mean annual, -2 is NHD mean annual (1971-2000)
@@ -183,4 +183,4 @@ xTitle <- textGrob('Exceedance Probability for Q [%]', gp=gpar(fontface="bold", 
 g <- grid.arrange(arrangeGrob(p, left = yTitle, bottom = xTitle))
 
 #save figure----------------------------------
-ggsave(file="C:\\Users\\craig\\Box Sync\\Ongoing Projects\\WROL_slash_CT_co2\\manuscript\\Figures\\fin\\Fig3.jpg", g, width = 11, height = 12)
+ggsave(file="~\\Figures\\Fig3.jpg", g, width = 11, height = 12)
